@@ -31,6 +31,20 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
+$routes->get('marque', 'MarqueController::index');
+$routes->get('marque/(:num)', 'MarqueController::show/$1');
+$routes->post('marque', 'MarqueController::create');
+$routes->post('marque/(:num)', 'MarqueController::update/$1');
+$routes->put('marque/(:num)', 'MarqueController::update/$1');
+$routes->delete('marque/(:num)', 'MarqueController::delete/$1');
+
+$routes->get('categorie', 'CategorieController::index');
+$routes->get('categorie/(:num)', 'CategorieController::show/$1');
+$routes->post('categorie', 'CategorieController::create');
+$routes->post('categorie/(:num)', 'CategorieController::update/$1');
+$routes->put('categorie/(:num)', 'CategorieController::update/$1');
+$routes->delete('categorie/(:num)', 'CategorieController::delete/$1');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
